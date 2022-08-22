@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table</title>
 </head>
 <body>
-    <h1>Nima gaplar?</h1>
+    <table id="table" border="2" width="100%" cellpadding="40" cellspacing="0">
+        
+    </table>
+
+
+    <script>
+        var Books = [
+            ['English', '20000', 'Toshkent'],
+            ['English', '20000', 'Toshkent'],
+            ['English', '20000', 'Toshkent'],
+            ['English', '20000', 'Toshkent'],
+            ['English', '20000', 'Toshkent'],
+        ]
+
+        function Chiqar() {
+            qator = `
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Address</th>
+                </tr>
+            `;
+
+        Books.forEach(function(book, i) {
+            qator += `
+                <tr align="center">
+                    <td>${i+1}</td>
+                    <td>${book[0]}</td>
+                    <td>${book[1]}</td>
+                    <td>${book[2]}</td>
+                </tr>
+            `;
+        })
+
+        document.getElementById('table').innerHTML = qator;
+        }
+
+        Chiqar(Books)
+    </script>
 </body>
 </html>
